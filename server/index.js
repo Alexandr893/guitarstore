@@ -1,6 +1,7 @@
-const sequelize = require('./db')
 require('dotenv').config()
 const express = require('express')
+const sequelize = require('./db')
+
 
 
 
@@ -12,7 +13,7 @@ const init = async () => {
     try {
         await sequelize.authenticate()
         await sequelize.sync()
-        app.listen(PORT, () => console.log(`Коннкет с бд на порту ${PORT}`))
+        app.listen(PORT, () => console.log(`Коннект с бд на порту ${PORT}`))
     } catch (e) {
         console.log(e)
     }
@@ -20,4 +21,3 @@ const init = async () => {
 
 init()
 
-app.listen(PORT, () => console.log(`Запуск сервера на порту ${PORT}`))
